@@ -3,7 +3,7 @@
 # It will be used for all containers in all environments
 # Build Sidekiq/Cron/App Containers
 #
-FROM phusion/passenger-ruby24:0.9.34 AS builder
+FROM phusion/passenger-ruby24:0.9.34
 
 RUN apt-get update -qq \
   # https://packages.debian.org/sid/gnupg2 (Digital Certificates)
