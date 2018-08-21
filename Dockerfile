@@ -13,7 +13,7 @@ RUN apt-get update -qq \
   # https://packages.debian.org/sid/tzdata (Timezone / DST Data)
   && apt-get install -y tzdata \
   # https://packages.debian.org/sid/postgresql-contrib (Postgres Contribs)
-  && apt-get install -y postgresql postgresql-contrib \
+  # && apt-get install -y postgresql postgresql-contrib \
   # Cleanup apt-get installs
   && apt-get clean
 

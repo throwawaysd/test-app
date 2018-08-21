@@ -31,7 +31,7 @@ HealthCheck.setup do |config|
     # config.standard_checks -= [ 'emailconf' ]
   
     # You can set what tests are run with the 'full' or 'all' parameter
-    config.full_checks = ['database', 'migrations', 'custom', 'email', 'cache', 'redis', 'sidekiq-redis']
+    config.full_checks = ['database', 'migrations', 'email', 'cache', 'redis', 'sidekiq-redis']
   
     # Add one or more custom checks that return a blank string if ok, or an error message if there is an error
     config.add_custom_check do
