@@ -26,7 +26,7 @@ RUN mkdir -p ${HOME}/webapp/
 WORKDIR ${HOME}/webapp/
 
 # Prepare for App Installs
-RUN chown -R app:app /home/app/ && \
+RUN chown -R app:app $HOME && \
   gem update --system --no-document && \
   gem install bundler
 
@@ -50,6 +50,9 @@ RUN bundle install --quiet --jobs=4 --retry 15
 
 # Configure App Dir
 COPY --chown=app:app . ${HOME}/webapp/
+
+# Add Log Dir
+RUN mkdir -p ${HOME}/webapp/log
 
 # Copy and update ownership for application configurations
 RUN cp config/docker/webapp.conf      /etc/nginx/sites-enabled/webapp.conf && \
